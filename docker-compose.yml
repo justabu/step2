@@ -1,0 +1,21 @@
+version: '2'
+services:
+  user_service_web:
+    build: ./user_details_service
+    ports:
+      - "1313:3000"
+    links:
+      - user_mysql
+    command: bash start-dev.sh
+  user_mysql:
+    image: justabu/user-db
+    container_name: user_database.dev
+    command: mysqld --user=root --verbose
+    ports:
+      - "3305:3306"
+    environment:
+      MYSQL_DATABASE: "docker_user_details"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
