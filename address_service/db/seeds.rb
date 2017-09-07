@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Address.create( street: "ACR Mansion 147/F, 8th Main, 3rd Block Koramangala", city: "Bangalore", state: "Karnataka", zipcode: "560034")
